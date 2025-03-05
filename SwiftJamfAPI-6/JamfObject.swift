@@ -8,6 +8,7 @@
 import Foundation
 
 protocol JamfObject: Codable, Identifiable {
+  
   var id: String { get set }
   
   static var getAllEndpoint: String { get }
@@ -24,6 +25,8 @@ extension JamfObject {
   /** build the URL for the request to fetch all categories */
   static func getAllURLComponents(server: String) throws -> URLComponents {
     // assemble the URL for the Jamf API
+    print("Server is set as:\(server)")
+
     guard var components = URLComponents(string: server)
     else {
       throw JamfAPIError.badURL
@@ -57,6 +60,13 @@ extension JamfObject {
       throw JamfAPIError.requestFailed
     }
     
+//    ##############################################################
+//    DEBUG
+//    ##############################################################
+
+//    print("Response is set as:\(response)")
+
+    
     // MARK: Handle Error
     // check the response code
     let statusCode = (response as? HTTPURLResponse)?.statusCode ?? 0
@@ -64,6 +74,9 @@ extension JamfObject {
       // error getting token
       throw JamfAPIError.http(statusCode)
     }
+    
+    print("statusCode is:\(statusCode)")
+
     
     // print(String(data: data, encoding: .utf8) ?? "no data")
     

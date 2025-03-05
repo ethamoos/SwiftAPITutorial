@@ -8,15 +8,25 @@
 import Foundation
 
 @main
+
 struct JamfList {
+  
   enum JamfType: String {
     case computer
+    case building
     case category
     case script
+    case macApplication
   }
   
   static func main() async {
     let args = CommandLine.arguments
+    
+//    
+//    print("args[1] is:\(args[1])")
+//    print("args[2] is:\(args[2])")
+//    print("args[3] is:\(args[3])")
+
     
     guard args.count > 3
     else {
@@ -37,6 +47,7 @@ struct JamfList {
     let username = args[3]
     var password = ""
     
+    print("Args count is:\(args.count)")
     // if there is a fourth argument, assign it to password
     if args.count > 4 {
       password = args[4]
@@ -55,7 +66,26 @@ struct JamfList {
       // get authentication token
       let auth = try await JamfAuthToken.get(server: server, username: username, password: password)
       
+//      print("Auth is:\(auth)")
       switch type {
+      case .macApplication:
+        
+        print("Fetching Applications")
+        let macApplications = try await MacApplication.getAll(server: server, auth: auth)
+        
+        for macApplication in macApplications {
+          print(macApplication.id,
+                macApplication.name)
+        }
+        
+      case .building:
+        let buildings = try await Building.getAll(server: server, auth: auth)
+        
+        for building in buildings {
+          print(building.id,
+                building.name)
+        }
+        
       case .category:
         let categories = try await Category.getAll(server: server, auth: auth)
         
