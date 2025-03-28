@@ -60,10 +60,6 @@ struct ComputerDetailed: JamfObject {
     }
     components.path = self.getAllEndpoint
     
-    components.queryItems = [ URLQueryItem(name: "section", value: "GENERAL"),
-                              URLQueryItem(name: "section", value: "HARDWARE"),
-                              URLQueryItem(name: "section", value: "OPERATING_SYSTEM"),
-                              URLQueryItem(name: "sort", value: "id:asc") ]
     return components
   }
 }
