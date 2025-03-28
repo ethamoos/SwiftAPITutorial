@@ -77,7 +77,7 @@ extension JamfObject {
     
     // MARK: Parse JSON Data
     let decoder = JSONDecoder()
-    
+    print("Trying to decode the data")
     // set date decoding to match Jamf's date format
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSX"
