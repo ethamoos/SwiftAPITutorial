@@ -33,6 +33,10 @@ extension JamfObject {
     return components
   }
 
+//              ##############################################################
+//              getAll
+//              ##############################################################
+
   /** Gets a list of all categories from the Jamf Pro Server */
   static func getAll(server: String, auth: JamfAuthToken) async throws -> [Self] {
     // MARK: Prepare Request
@@ -43,7 +47,10 @@ extension JamfObject {
       throw JamfAPIError.badURL
     }
 
+    // ##############################################################
     // print("Request URL: \(url.absoluteString)")
+    // ##############################################################
+
     
     // MARK: Send Request and get Data
     // create the request
@@ -65,7 +72,8 @@ extension JamfObject {
       throw JamfAPIError.http(statusCode)
     }
     
-    // print(String(data: data, encoding: .utf8) ?? "no data")
+    print("Get the returned data to debug")
+     print(String(data: data, encoding: .utf8) ?? "no data")
     
     // MARK: Parse JSON Data
     let decoder = JSONDecoder()

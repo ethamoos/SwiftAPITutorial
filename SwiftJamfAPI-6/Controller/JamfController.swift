@@ -66,12 +66,12 @@ class JamfController: ObservableObject {
       //              Scripts
       //              ##############################################################
       
-          if let fetchedScripts = try? await Script.getAll(server: server, auth: auth) {
-            scripts = fetchedScripts
-//              print(computers)
-          } else {
-            hasError = true
-          }
+//          if let fetchedScripts = try? await Script.getAll(server: server, auth: auth) {
+//            scripts = fetchedScripts
+////              print(computers)
+//          } else {
+//            hasError = true
+//          }
 //
 //
 //
@@ -143,7 +143,7 @@ class JamfController: ObservableObject {
         
         print("Running: getRequestURL")
         print("Server is:\(server)")
-        print("endpoint is:\(endpoint)")
+        print("Endpoint is:\(endpoint)")
 
       // assemble the URL for the Jamf API
       guard var components = URLComponents(string: server)
