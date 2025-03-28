@@ -3,11 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A8FAD6D72D96B3F00000EFFF /* Computer-Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A33478294B4CB300FA22CD /* Computer-Sample.swift */; };
+		A86BC3532D96C66D0089A2ED /* Computer-Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86BC3522D96C6660089A2ED /* Computer-Sample.swift */; };
+		A86BC3542D96C66D0089A2ED /* Computer-Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86BC3522D96C6660089A2ED /* Computer-Sample.swift */; };
+		A86BC3552D96C7240089A2ED /* Script.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62CFA89290AC9E900B2E481 /* Script.swift */; };
 		A8FAD6DB2D96B5020000EFFF /* ComputerDetailed.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FAD6DA2D96B4FE0000EFFF /* ComputerDetailed.swift */; };
 		A8FAD6DC2D96B5020000EFFF /* ComputerDetailed.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FAD6DA2D96B4FE0000EFFF /* ComputerDetailed.swift */; };
 		C62CFA88290961D600B2E481 /* JamfObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62CFA87290961D600B2E481 /* JamfObject.swift */; };
@@ -21,12 +23,10 @@
 		C6A3346E294A227600FA22CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6A3346D294A227600FA22CD /* Assets.xcassets */; };
 		C6A33472294A227600FA22CD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6A33471294A227600FA22CD /* Preview Assets.xcassets */; };
 		C6A33477294B46BE00FA22CD /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A33476294B46BE00FA22CD /* DetailView.swift */; };
-		C6A33479294B4CB300FA22CD /* Computer-Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A33478294B4CB300FA22CD /* Computer-Sample.swift */; };
 		C6A3347A294B4D1000FA22CD /* Computer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6873FB628D8A4D100FA893B /* Computer.swift */; };
 		C6A3347B294B4D2700FA22CD /* JamfAuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F53D8128C62CFF00E0B11F /* JamfAuthToken.swift */; };
 		C6A3347C294B4D2700FA22CD /* JamfAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6873FB828D8B13700FA893B /* JamfAPIError.swift */; };
 		C6A3347D294B4D2700FA22CD /* JamfObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62CFA87290961D600B2E481 /* JamfObject.swift */; };
-		C6A3347F2951F5DE00FA22CD /* JamfController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A3347E2951F5DE00FA22CD /* JamfController.swift */; };
 		C6C845312913CC1A00AF407A /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C845302913CC1A00AF407A /* Keychain.swift */; };
 		C6D2D12629F16BF400F9172B /* ConnectSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68FDC9129534E9400657076 /* ConnectSheet.swift */; };
 		C6F53D8028C629D300E0B11F /* JamfList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F53D7F28C629D300E0B11F /* JamfList.swift */; };
@@ -46,6 +46,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A86BC3522D96C6660089A2ED /* Computer-Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Computer-Sample.swift"; sourceTree = "<group>"; };
 		A8FAD6DA2D96B4FE0000EFFF /* ComputerDetailed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComputerDetailed.swift; sourceTree = "<group>"; };
 		C62CFA87290961D600B2E481 /* JamfObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JamfObject.swift; sourceTree = "<group>"; };
 		C62CFA89290AC9E900B2E481 /* Script.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Script.swift; sourceTree = "<group>"; };
@@ -60,13 +61,15 @@
 		C6A3346F294A227600FA22CD /* JamfList.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JamfList.entitlements; sourceTree = "<group>"; };
 		C6A33471294A227600FA22CD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C6A33476294B46BE00FA22CD /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
-		C6A33478294B4CB300FA22CD /* Computer-Sample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Computer-Sample.swift"; path = "../SwiftJamfAPI working/Computer-Sample.swift"; sourceTree = "<group>"; };
-		C6A3347E2951F5DE00FA22CD /* JamfController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JamfController.swift; sourceTree = "<group>"; };
 		C6C845302913CC1A00AF407A /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		C6F53D7528C6295600E0B11F /* jamf_list */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jamf_list; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6F53D7F28C629D300E0B11F /* JamfList.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = JamfList.swift; sourceTree = "<group>"; tabWidth = 2; };
 		C6F53D8128C62CFF00E0B11F /* JamfAuthToken.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = JamfAuthToken.swift; sourceTree = "<group>"; tabWidth = 2; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		A86BC3562D96C8DB0089A2ED /* Controller */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Controller; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		C6A33464294A227500FA22CD /* Frameworks */ = {
@@ -94,8 +97,8 @@
 				C62CFA87290961D600B2E481 /* JamfObject.swift */,
 				C6873FB428D8A37000FA893B /* Category.swift */,
 				C6873FB628D8A4D100FA893B /* Computer.swift */,
+				A86BC3522D96C6660089A2ED /* Computer-Sample.swift */,
 				A8FAD6DA2D96B4FE0000EFFF /* ComputerDetailed.swift */,
-				C6A33478294B4CB300FA22CD /* Computer-Sample.swift */,
 				C62CFA89290AC9E900B2E481 /* Script.swift */,
 			);
 			name = Model;
@@ -107,7 +110,6 @@
 				C6A33469294A227500FA22CD /* JamfListApp.swift */,
 				C6A3346B294A227500FA22CD /* ContentView.swift */,
 				C6A33476294B46BE00FA22CD /* DetailView.swift */,
-				C6A3347E2951F5DE00FA22CD /* JamfController.swift */,
 				C68FDC9129534E9400657076 /* ConnectSheet.swift */,
 				C6A3346D294A227600FA22CD /* Assets.xcassets */,
 				C6A3346F294A227600FA22CD /* JamfList.entitlements */,
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				C6F53D7F28C629D300E0B11F /* JamfList.swift */,
+				A86BC3562D96C8DB0089A2ED /* Controller */,
 				C6C845302913CC1A00AF407A /* Keychain.swift */,
 			);
 			path = "CLI Tool";
@@ -168,6 +171,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				A86BC3562D96C8DB0089A2ED /* Controller */,
 			);
 			name = JamfList;
 			productName = JamfList;
@@ -247,16 +253,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6A3347D294B4D2700FA22CD /* JamfObject.swift in Sources */,
+				A86BC3552D96C7240089A2ED /* Script.swift in Sources */,
 				C6A3346C294A227500FA22CD /* ContentView.swift in Sources */,
 				C6A3347B294B4D2700FA22CD /* JamfAuthToken.swift in Sources */,
-				C6A3347F2951F5DE00FA22CD /* JamfController.swift in Sources */,
 				A8FAD6DC2D96B5020000EFFF /* ComputerDetailed.swift in Sources */,
 				C6A33477294B46BE00FA22CD /* DetailView.swift in Sources */,
 				C6A3347A294B4D1000FA22CD /* Computer.swift in Sources */,
-				C6A33479294B4CB300FA22CD /* Computer-Sample.swift in Sources */,
 				C6A3346A294A227500FA22CD /* JamfListApp.swift in Sources */,
 				C6A3347C294B4D2700FA22CD /* JamfAPIError.swift in Sources */,
 				C6D2D12629F16BF400F9172B /* ConnectSheet.swift in Sources */,
+				A86BC3542D96C66D0089A2ED /* Computer-Sample.swift in Sources */,
 				C68FDC8C29534AE600657076 /* Keychain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,10 +272,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6873FB728D8A4D100FA893B /* Computer.swift in Sources */,
-				A8FAD6D72D96B3F00000EFFF /* Computer-Sample.swift in Sources */,
 				C62CFA8A290AC9E900B2E481 /* Script.swift in Sources */,
 				C6F53D8028C629D300E0B11F /* JamfList.swift in Sources */,
 				C6873FB928D8B13700FA893B /* JamfAPIError.swift in Sources */,
+				A86BC3532D96C66D0089A2ED /* Computer-Sample.swift in Sources */,
 				C6F53D8228C62CFF00E0B11F /* JamfAuthToken.swift in Sources */,
 				A8FAD6DB2D96B5020000EFFF /* ComputerDetailed.swift in Sources */,
 				C6C845312913CC1A00AF407A /* Keychain.swift in Sources */,
