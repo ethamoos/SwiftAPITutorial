@@ -58,6 +58,7 @@ struct ComputerDetailed: JamfObject {
     else {
       throw JamfAPIError.badURL
     }
+
     components.path = self.getAllEndpoint
     
     return components
