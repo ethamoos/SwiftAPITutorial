@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A8FAD6D72D96B3F00000EFFF /* Computer-Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A33478294B4CB300FA22CD /* Computer-Sample.swift */; };
+		A8FAD6DB2D96B5020000EFFF /* ComputerDetailed.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FAD6DA2D96B4FE0000EFFF /* ComputerDetailed.swift */; };
+		A8FAD6DC2D96B5020000EFFF /* ComputerDetailed.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FAD6DA2D96B4FE0000EFFF /* ComputerDetailed.swift */; };
 		C62CFA88290961D600B2E481 /* JamfObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62CFA87290961D600B2E481 /* JamfObject.swift */; };
 		C62CFA8A290AC9E900B2E481 /* Script.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62CFA89290AC9E900B2E481 /* Script.swift */; };
 		C6873FB528D8A37000FA893B /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6873FB428D8A37000FA893B /* Category.swift */; };
@@ -43,6 +46,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A8FAD6DA2D96B4FE0000EFFF /* ComputerDetailed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComputerDetailed.swift; sourceTree = "<group>"; };
 		C62CFA87290961D600B2E481 /* JamfObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JamfObject.swift; sourceTree = "<group>"; };
 		C62CFA89290AC9E900B2E481 /* Script.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Script.swift; sourceTree = "<group>"; };
 		C6873FB428D8A37000FA893B /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -90,6 +94,7 @@
 				C62CFA87290961D600B2E481 /* JamfObject.swift */,
 				C6873FB428D8A37000FA893B /* Category.swift */,
 				C6873FB628D8A4D100FA893B /* Computer.swift */,
+				A8FAD6DA2D96B4FE0000EFFF /* ComputerDetailed.swift */,
 				C6A33478294B4CB300FA22CD /* Computer-Sample.swift */,
 				C62CFA89290AC9E900B2E481 /* Script.swift */,
 			);
@@ -245,6 +250,7 @@
 				C6A3346C294A227500FA22CD /* ContentView.swift in Sources */,
 				C6A3347B294B4D2700FA22CD /* JamfAuthToken.swift in Sources */,
 				C6A3347F2951F5DE00FA22CD /* JamfController.swift in Sources */,
+				A8FAD6DC2D96B5020000EFFF /* ComputerDetailed.swift in Sources */,
 				C6A33477294B46BE00FA22CD /* DetailView.swift in Sources */,
 				C6A3347A294B4D1000FA22CD /* Computer.swift in Sources */,
 				C6A33479294B4CB300FA22CD /* Computer-Sample.swift in Sources */,
@@ -260,10 +266,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6873FB728D8A4D100FA893B /* Computer.swift in Sources */,
+				A8FAD6D72D96B3F00000EFFF /* Computer-Sample.swift in Sources */,
 				C62CFA8A290AC9E900B2E481 /* Script.swift in Sources */,
 				C6F53D8028C629D300E0B11F /* JamfList.swift in Sources */,
 				C6873FB928D8B13700FA893B /* JamfAPIError.swift in Sources */,
 				C6F53D8228C62CFF00E0B11F /* JamfAuthToken.swift in Sources */,
+				A8FAD6DB2D96B5020000EFFF /* ComputerDetailed.swift in Sources */,
 				C6C845312913CC1A00AF407A /* Keychain.swift in Sources */,
 				C62CFA88290961D600B2E481 /* JamfObject.swift in Sources */,
 				C6873FB528D8A37000FA893B /* Category.swift in Sources */,
@@ -284,7 +292,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"JamfList/Preview Content\"";
-				DEVELOPMENT_TEAM = JME5BW3F3R;
+				DEVELOPMENT_TEAM = T8LP25947P;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -326,7 +334,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"JamfList/Preview Content\"";
-				DEVELOPMENT_TEAM = JME5BW3F3R;
+				DEVELOPMENT_TEAM = T8LP25947P;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
