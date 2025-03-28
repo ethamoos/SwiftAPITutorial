@@ -53,8 +53,8 @@ struct ConnectSheet: View {
   }
 }
 
-struct ConnectSheet_Previews: PreviewProvider {
-    static var previews: some View {
-      ConnectSheet(show: .constant(true), controller: JamfController())
-    }
-}
+//struct ConnectSheet_Previews: PreviewProvider {
+//    static var previews: some View {
+//      ConnectSheet(show: .constant(true), controller: JamfController())
+//    }
+//}

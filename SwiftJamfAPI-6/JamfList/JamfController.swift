@@ -41,6 +41,11 @@ class JamfController: ObservableObject {
 
     // only continue if connected
     guard connected, let auth = auth else { return }
+    
+//    ##############################################################
+//    GET COMPUTERS
+//    ##############################################################
+
 
     if let fetchedComputers = try? await Computer.getAll(server: server, auth: auth) {
       computers = fetchedComputers
@@ -48,6 +53,11 @@ class JamfController: ObservableObject {
       hasError = true
     }
   }
+  
+  //    ##############################################################
+  //    GET COMPUTERS
+  //    ##############################################################
+
   
   @MainActor
   func connect() async {
@@ -86,5 +96,4 @@ class JamfController: ObservableObject {
     hasError = false
     connected = true
   }
-
 }
