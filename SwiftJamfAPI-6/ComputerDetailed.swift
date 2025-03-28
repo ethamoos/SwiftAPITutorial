@@ -57,7 +57,7 @@ struct ComputerDetailed: JamfObject {
     guard var components = URLComponents(string: server)
     else {
       throw JamfAPIError.badURL
-    }    
+    }
  
     return components
   }
