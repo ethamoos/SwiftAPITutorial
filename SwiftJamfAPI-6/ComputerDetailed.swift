@@ -57,13 +57,8 @@ struct ComputerDetailed: JamfObject {
     guard var components = URLComponents(string: server)
     else {
       throw JamfAPIError.badURL
-    }
-    components.path = self.getAllEndpoint
-    
-    components.queryItems = [ URLQueryItem(name: "section", value: "GENERAL"),
-                              URLQueryItem(name: "section", value: "HARDWARE"),
-                              URLQueryItem(name: "section", value: "OPERATING_SYSTEM"),
-                              URLQueryItem(name: "sort", value: "id:asc") ]
+    }    
+ 
     return components
   }
 }
