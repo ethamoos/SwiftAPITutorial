@@ -36,7 +36,13 @@ struct ComputerDetailed: JamfObject {
       print("Error with url")
       throw JamfAPIError.badURL
     }
+//<<<<<<< HEAD
     print("components are:\(components)")
+//=======
+
+    components.path = self.getAllEndpoint
+    
+//>>>>>>> cb5720b81a0afca3fec0c2d89017d5ce102ff1fe
     return components
   }
 }
