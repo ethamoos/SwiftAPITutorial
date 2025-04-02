@@ -57,7 +57,6 @@ class JamfController: ObservableObject {
       
     if let fetchedComputers = try? await Computer.getAll(server: server, argStatus: false, auth: auth, itemID: []) {
             computers = fetchedComputers
-//              print(computers)
           } else {
             hasError = true
           }
@@ -133,44 +132,41 @@ class JamfController: ObservableObject {
         }
     }
     
+  
+  func getRequestURL(
+    endpoint: String,
+    appending paths: [String] = [],
+    queryItems: [String:String] = [:],
+    server: String
+  ) throws -> URL {
     
-    func getRequestURL(
-      endpoint: String,
-      appending paths: [String] = [],
-      queryItems: [String:String] = [:],
-      server: String
-    ) throws -> URL {
-        
-        print("Running: getRequestURL")
-        print("Server is:\(server)")
-        print("Endpoint is:\(endpoint)")
-
-      // assemble the URL for the Jamf API
-      guard var components = URLComponents(string: server)
-      else {
-        throw JamfAPIError.badURL
-      }
-      var path: NSString = endpoint as NSString
-      paths.forEach {
-        path = path.appendingPathComponent($0) as NSString
-
-      }
-      components.path = path as String
-
-      var urlQueryItems = [URLQueryItem]()
-        
-      for (key, value) in queryItems {
-        urlQueryItems.append(URLQueryItem(name: key, value: value))
-      }
-      components.queryItems = urlQueryItems
-
-      guard let url = components.url else {
-        throw JamfAPIError.badURL
-
-      }
-        
-  print("Returning url:\(url)")
-        
-      return url
+    print("Running: getRequestURL")
+    print("Server is:\(server)")
+    print("Endpoint is:\(endpoint)")
+    
+    // assemble the URL for the Jamf API
+    guard var components = URLComponents(string: server)
+    else {
+      throw JamfAPIError.badURL
     }
+    var path: NSString = endpoint as NSString
+    paths.forEach {
+      path = path.appendingPathComponent($0) as NSString
+      
+    }
+    components.path = path as String
+    
+    var urlQueryItems = [URLQueryItem]()
+    
+    for (key, value) in queryItems {
+      urlQueryItems.append(URLQueryItem(name: key, value: value))
+    }
+    components.queryItems = urlQueryItems
+    
+    guard let url = components.url else {
+      throw JamfAPIError.badURL
+    }
+    print("Returning url:\(url)")
+    return url
+  }
 }

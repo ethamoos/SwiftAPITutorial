@@ -1,13 +1,3 @@
-//
-//  ComputerDetailed.swift
-//  JamfList
-//
-//  Created by Amos Deane on 28/03/2025.
-//
-
-
-
-
 import Foundation
 
 // MARK: - ComputerDetailedResponse
@@ -20,11 +10,8 @@ import Foundation
 struct ComputerDetailed: JamfObject {
   
   var id: String
-  var udid: UUID
-  
   struct General: Codable {
     var name: String
-    var id: String
     let lastIPAddress, lastReportedIP, lastEnrolledDate: String?
   }
   
@@ -36,13 +23,7 @@ struct ComputerDetailed: JamfObject {
       print("Error with url")
       throw JamfAPIError.badURL
     }
-//<<<<<<< HEAD
     print("components are:\(components)")
-//=======
-
-    components.path = self.getAllEndpoint
-    
-//>>>>>>> cb5720b81a0afca3fec0c2d89017d5ce102ff1fe
     return components
-  }
+  }  
 }
