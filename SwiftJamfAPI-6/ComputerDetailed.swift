@@ -29,7 +29,9 @@ import Foundation
 //  //   let computerResponse = try? JSONDecoder().decode(ComputerResponse.self, from: jsonData)
 //
 //
-//  // MARK: - ComputerResponse
+
+
+// MARK: - ComputerResponse
 struct ComputerDetailedResponse: Codable {
   let totalCount: Int
   let results: [ComputerDetailed]
@@ -38,27 +40,35 @@ struct ComputerDetailedResponse: Codable {
 // MARK: - Result
 struct ComputerDetailed: JamfObject {
   
-  var id: String
   
+//  static func getAll(server: String, argStatus: Bool, auth: JamfAuthToken) async throws -> [ComputerDetailed] {
+//
+//    return result.results
+//
+//  }
+  
+//  static func getAll(server: String, argStatus: Bool, auth: JamfAuthToken) async throws -> [ComputerDetailed] {
+//  }
+  
+
+  
+  var id: String
   struct General: Codable {
     var name: String
-    let lastIPAddress, lastReportedIP: String?
-    
+    let lastIPAddress, lastReportedIP, lastEnrolledDate: String?
   }
-  
-  
-  
-  // MARK: JamfObject implementation
   
   static var getAllEndpoint = "/JSSResource/computers/id/"
   
-  // override getAllURLComponents to add query items
   static func getAllURLComponents(server: String) throws -> URLComponents {
-    guard var components = URLComponents(string: server)
+    guard let components = URLComponents(string: server)
     else {
+      print("Error with url")
       throw JamfAPIError.badURL
     }
- 
+    print("components are:\(components)")
     return components
   }
+
+  
 }

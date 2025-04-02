@@ -47,23 +47,20 @@ struct DetailView: View {
         print("ServerRequest is:\(serverRequest)")
         
         if (controller.auth != nil) {
+          
           print("Running: getAll for ComputerDetailed")
-          if let fetchedDetailedComputer = try? await ComputerDetailed.getAll(server: server, auth: controller.auth!) {
+          
+          if let fetchedDetailedComputer = try? await ComputerDetailed.getAll(server: server, argStatus: true, auth: controller.auth!, itemID: [computer.general.id] ) {
             let detailedComputer = fetchedDetailedComputer
-            print(detailedComputer)
-            
+            print("detailedComputer is:\(detailedComputer)")
           } else {
             controller.hasError = true
             print("Error from getAll request")
-            
           }
         } else {
           print("No value for token")
-          
         }
       }
-
-
     }
   }
 }

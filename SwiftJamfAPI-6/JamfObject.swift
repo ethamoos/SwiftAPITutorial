@@ -16,7 +16,7 @@ protocol JamfObject: Codable, Identifiable {
   static func getAllURLComponents(server: String) throws -> URLComponents
   
   /** Gets a list of all objects from the Jamf Pro Server */
-  static func getAll(server: String, auth: JamfAuthToken) async throws -> [Self]
+  static func getAll(server: String, argStatus: Bool, auth: JamfAuthToken, itemID: [String]) async throws -> [Self]
 }
 
 extension JamfObject {
@@ -28,7 +28,7 @@ extension JamfObject {
     else {
       throw JamfAPIError.badURL
     }
-    components.path = self.getAllEndpoint
+    components.path = getAllEndpoint
     
     return components
   }
@@ -38,15 +38,17 @@ extension JamfObject {
 //              ##############################################################
 
   /** Gets a list of all categories from the Jamf Pro Server */
-  static func getAll(server: String, auth: JamfAuthToken) async throws -> [Self] {
+  static func getAll(server: String, argStatus: Bool, auth: JamfAuthToken, itemID: [String]) async throws -> [Self] {
     // MARK: Prepare Request
-    let components = try getAllURLComponents(server: server)
     
-    guard let url = components.url
-    else {
-      throw JamfAPIError.badURL
+    let url: URL
+    
+    if argStatus == true {
+       url = try getURLWithArg(endpoint: getAllEndpoint, itemID: itemID, server: server)
+    } else {
+       url = try getURLNoArg(server: server)
     }
-
+    
     // ##############################################################
     // print("Request URL: \(url.absoluteString)")
     // ##############################################################
@@ -72,8 +74,9 @@ extension JamfObject {
       throw JamfAPIError.http(statusCode)
     }
     
-    print("Get the returned data to debug")
-    print(String(data: data, encoding: .utf8) ?? "no data")
+//    DEBUG
+//    print("Get the returned data to debug")
+//    print(String(data: data, encoding: .utf8) ?? "no data")
     
     // MARK: Parse JSON Data
     let decoder = JSONDecoder()
@@ -104,7 +107,49 @@ extension JamfObject {
     
     throw JamfAPIError.decode
   }
+  
+//}
+  
+  static func getURLNoArg(server: String) throws -> URL {
+    
+    let components = try getAllURLComponents(server: server)
+    
+    guard let url = components.url
+    else {
+      throw JamfAPIError.badURL
+    }
+    return url
+  }
 
+  
+  static func getURLWithArg(
+    endpoint: String,
+     itemID: [String] = [],
+    queryItems: [String:String] = [:],
+    server: String
+   ) throws -> URL {
+    // assemble the URL for the Jamf API
+    guard var components = URLComponents(string: server)
+    else {
+     throw JamfAPIError.badURL
+    }
+    var path: NSString = endpoint as NSString
+     itemID.forEach {
+     path = path.appendingPathComponent($0) as NSString
+    }
+    components.path = path as String
+    var urlQueryItems = [URLQueryItem]()
+      
+    for (key, value) in queryItems {
+     urlQueryItems.append(URLQueryItem(name: key, value: value))
+    }
+    components.queryItems = urlQueryItems
+    guard let url = components.url else {
+     throw JamfAPIError.badURL
+    }
+  print("Url is:\(url)")
+    return url
+   }
 }
 
 struct JamfResults<T: JamfObject>: Codable {
