@@ -57,7 +57,7 @@ struct JamfList {
       
       switch type {
       case .category:
-        let categories = try await Category.getAll(server: server, auth: auth)
+        let categories = try await Category.getAll(server: server, argStatus: false, auth: auth, itemID: [])
         
         for category in categories {
           print(category.id,
@@ -67,7 +67,7 @@ struct JamfList {
         
       case .computer:
         // get computers
-        let computers = try await Computer.getAll(server: server, auth: auth)
+        let computers = try await Computer.getAll(server: server, argStatus: false, auth: auth, itemID: [])
         
         for computer in computers {
           print(computer.id,
@@ -76,7 +76,7 @@ struct JamfList {
         
       case .script:
         //get scripts
-        let scripts = try await Script.getAll(server:server, auth: auth)
+        let scripts = try await Script.getAll(server: server, argStatus: false, auth: auth, itemID: [])
         
         for script in scripts {
           print(script.id,

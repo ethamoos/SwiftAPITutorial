@@ -50,9 +50,10 @@ struct DetailView: View {
           
           print("Running: getAll for ComputerDetailed")
           
-          if let fetchedDetailedComputer = try? await ComputerDetailed.getAll(server: server, argStatus: true, auth: controller.auth!, itemID: [computer.general.id] ) {
+          if let fetchedDetailedComputer = try? await ComputerDetailed.getAll(server: server, argStatus: true, auth: controller.auth!, itemID: [computer.id] ) {
             let detailedComputer = fetchedDetailedComputer
             print("detailedComputer is:\(detailedComputer)")
+            print("Computer ID is:\(computer.id)")
           } else {
             controller.hasError = true
             print("Error from getAll request")

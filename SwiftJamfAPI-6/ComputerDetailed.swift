@@ -12,49 +12,19 @@ import Foundation
 
 // MARK: - ComputerDetailedResponse
 //struct ComputerDetailedResponse: Codable {
-//    let computer: ComputerDetailed
+//  let totalCount: Int
+//  let results: [ComputerDetailed]
 //}
-
-// MARK: - ComputerDetailed
-//struct ComputerDetailed: JamfObject, Hashable  {
-//
-//  var id: String
-//
-//
-//
-//
-//  // This file was generated from JSON Schema using quicktype, do not modify it directly.
-//  // To parse the JSON, add this file to your project and do:
-//  //
-//  //   let computerResponse = try? JSONDecoder().decode(ComputerResponse.self, from: jsonData)
-//
-//
-
-
-// MARK: - ComputerResponse
-struct ComputerDetailedResponse: Codable {
-  let totalCount: Int
-  let results: [ComputerDetailed]
-}
 
 // MARK: - Result
 struct ComputerDetailed: JamfObject {
   
-  
-//  static func getAll(server: String, argStatus: Bool, auth: JamfAuthToken) async throws -> [ComputerDetailed] {
-//
-//    return result.results
-//
-//  }
-  
-//  static func getAll(server: String, argStatus: Bool, auth: JamfAuthToken) async throws -> [ComputerDetailed] {
-//  }
-  
-
-  
   var id: String
+  var udid: UUID
+  
   struct General: Codable {
     var name: String
+    var id: String
     let lastIPAddress, lastReportedIP, lastEnrolledDate: String?
   }
   
@@ -69,6 +39,4 @@ struct ComputerDetailed: JamfObject {
     print("components are:\(components)")
     return components
   }
-
-  
 }

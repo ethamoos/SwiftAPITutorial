@@ -75,8 +75,8 @@ extension JamfObject {
     }
     
 //    DEBUG
-//    print("Get the returned data to debug")
-//    print(String(data: data, encoding: .utf8) ?? "no data")
+    print("Get the returned data to debug")
+    print(String(data: data, encoding: .utf8) ?? "no data")
     
     // MARK: Parse JSON Data
     let decoder = JSONDecoder()

@@ -55,7 +55,7 @@ class JamfController: ObservableObject {
       //              Computers
       //              ##############################################################
       
-          if let fetchedComputers = try? await Computer.getAll(server: server, auth: auth) {
+    if let fetchedComputers = try? await Computer.getAll(server: server, argStatus: false, auth: auth, itemID: []) {
             computers = fetchedComputers
 //              print(computers)
           } else {
