@@ -59,7 +59,8 @@ extension JamfObject {
     var request = URLRequest(url: url)
     request.httpMethod = "GET"
     request.addValue("Bearer " + auth.token, forHTTPHeaderField: "Authorization")
-    
+    request.addValue("application/json", forHTTPHeaderField: "Accept")
+
     // send request and get data
     guard let (data, response) = try? await URLSession.shared.data(for: request)
     else {
