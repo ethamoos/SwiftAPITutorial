@@ -10,9 +10,14 @@ import Foundation
 struct ComputerDetailed: JamfObject {
   
   var id: String
-  struct General: Codable {
-    var name: String
-    let lastIPAddress, lastReportedIP, lastEnrolledDate: String?
+  let computer: Computer
+  
+  struct Computer: Codable {
+    
+    struct General: Codable {
+      var name: String
+      let lastIPAddress, lastReportedIP, lastEnrolledDate: String?
+    }
   }
   
   static var getAllEndpoint = "/JSSResource/computers/id/"

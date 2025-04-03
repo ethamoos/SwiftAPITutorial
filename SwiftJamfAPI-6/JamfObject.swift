@@ -37,22 +37,15 @@ extension JamfObject {
 //              getAll
 //              ##############################################################
 
-  /** Gets a list of all categories from the Jamf Pro Server */
   static func getAll(server: String, argStatus: Bool, auth: JamfAuthToken, itemID: [String]) async throws -> [Self] {
     // MARK: Prepare Request
     
     let url: URL
-    
     if argStatus == true {
        url = try getURLWithArg(endpoint: getAllEndpoint, itemID: itemID, server: server)
     } else {
        url = try getURLNoArg(server: server)
     }
-    
-    // ##############################################################
-    // print("Request URL: \(url.absoluteString)")
-    // ##############################################################
-
     
     // MARK: Send Request and get Data
     // create the request
@@ -75,9 +68,11 @@ extension JamfObject {
       throw JamfAPIError.http(statusCode)
     }
     
+//    ##############################################################
 //    DEBUG
-    print("Get the returned data to debug")
-    print(String(data: data, encoding: .utf8) ?? "no data")
+//    ##############################################################
+//    print("Get the returned data to debug")
+//    print(String(data: data, encoding: .utf8) ?? "no data")
     
     // MARK: Parse JSON Data
     let decoder = JSONDecoder()
@@ -88,10 +83,14 @@ extension JamfObject {
     decoder.dateDecodingStrategy = .formatted(dateFormatter)
     
     do {
-      let result = try decoder.decode(JamfResults<Self>.self, from: data)
       
-      return result.results
-      
+      if argStatus == true {
+        let result = try decoder.decode(JamfResultsComputerDetailed<Self>.self, from: data)
+        return result.computer
+      } else {
+        let result = try decoder.decode(JamfResults<Self>.self, from: data)
+        return result.results
+      }
       // handle decoding errors
       // see DecodingError documentation for details
     } catch let DecodingError.dataCorrupted(context) {
@@ -108,8 +107,6 @@ extension JamfObject {
     
     throw JamfAPIError.decode
   }
-  
-//}
   
   static func getURLNoArg(server: String) throws -> URL {
     
@@ -156,4 +153,9 @@ extension JamfObject {
 struct JamfResults<T: JamfObject>: Codable {
   var totalCount: Int
   var results: [T]
+}
+
+struct JamfResultsComputerDetailed<T: JamfObject>: Codable {
+//  var totalCount: Int
+  var computer: [T]
 }

@@ -28,7 +28,7 @@ struct DetailView: View {
     }
     .padding()
     .onAppear() {
-        print("Navigated to: ComputerDetailAltView")
+        print("Navigated to: ComputerDetailView")
      
       Task {
         

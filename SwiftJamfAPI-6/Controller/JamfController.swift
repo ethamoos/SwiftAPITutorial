@@ -152,7 +152,6 @@ class JamfController: ObservableObject {
     var path: NSString = endpoint as NSString
     paths.forEach {
       path = path.appendingPathComponent($0) as NSString
-      
     }
     components.path = path as String
     
